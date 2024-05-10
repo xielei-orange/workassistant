@@ -75,10 +75,6 @@ func checkImageTag(value string) bool {
 	return re.MatchString(value)
 }
 func verifyParameters(field string, value string) bool {
-	validNamespace := []string{"nexus", "family", "belray", "dicos", "goods-selection", "kong"}
-	validName := []string{"crm-log-provider", "crmadapter", "crm-activity-provider", "crm-card-provider", "crm-coupon-provider",
-		"crm-points-provider", "crm-member-provider", "crm-order-provider", "crm-payment-provider", "crm-log-provider", "crm-job-provider",
-		"crm-tag-provider", "crm-admin-provider", "crm-job-admin", "crm-metrics-provider", "webconsole"}
 	switch field {
 	case "命名空间":
 		return isInArray(value, validNamespace)

@@ -13,7 +13,7 @@ var (
 
 func RunMigrations() error {
 	var err error
-	dsn := "root:x2eracom@tcp(10.40.64.32:3306)/devops?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := ":@tcp(10.40.64.32:3306)/devops?charset=utf8mb4&parseTime=True&loc=Local"
 	config := gorm.Config{}
 	DB, err = gorm.Open(mysql.Open(dsn), &config)
 	if err != nil {

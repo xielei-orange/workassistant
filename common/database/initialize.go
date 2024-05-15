@@ -1,10 +1,12 @@
 package database
 
 import (
+	"strconv"
+	"workassistant/common"
+	"workassistant/models"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"strconv"
-	"tools/models"
 )
 
 var (
@@ -13,7 +15,8 @@ var (
 
 func RunMigrations() error {
 	var err error
-	dsn := ":@tcp(10.40.64.32:3306)/devops?charset=utf8mb4&parseTime=True&loc=Local"
+	setting := common.GetConfig()
+	dsn := setting.GetString("settings.database.source")
 	config := gorm.Config{}
 	DB, err = gorm.Open(mysql.Open(dsn), &config)
 	if err != nil {

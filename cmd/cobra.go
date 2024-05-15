@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"github.com/spf13/cobra"
 	"os"
-	"tools/cmd/container"
-	"tools/cmd/migrate"
+	"workassistant/cmd/container"
+	"workassistant/cmd/migrate"
 )
 
 var cobraCmd = &cobra.Command{
-	Use:   "tools",
-	Short: "tools",
+	Use:   "workassistant",
+	Short: "workassistant",
 	Args: func(cmd *cobra.Command, args []string) error {
 		if len(args) < 1 {
 			// 提示语
@@ -28,7 +28,7 @@ var cobraCmd = &cobra.Command{
 	}}
 
 func tip() {
-	fmt.Println("欢迎使用tools工具，该工具主要解决日常重复工作")
+	fmt.Println("欢迎使用workassistant工具，该工具主要解决日常重复工作")
 	fmt.Println("可使用-h或--help获取命令使用详情")
 }
 

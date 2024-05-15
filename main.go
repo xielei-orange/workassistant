@@ -1,7 +1,7 @@
 package main
 
 import (
-	"tools/cmd"
+	"workassistant/cmd"
 )
 
 func main() {

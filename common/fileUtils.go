@@ -2,9 +2,10 @@ package common
 
 import (
 	"fmt"
-	"github.com/xuri/excelize/v2"
 	"log"
 	"regexp"
+
+	"github.com/xuri/excelize/v2"
 )
 
 // ExcelRow 定义一个结构体，表示 Excel 数据
@@ -66,6 +67,7 @@ func isInArray(value string, array []string) bool {
 }
 
 func checkImageTag(value string) bool {
+
 	imageNamespace := `^(nexus|family|belray|dicos|goods_selection|kong)`
 	imageTag := `v\d.\d.\d{2}$`
 	re, err := regexp.Compile(imageNamespace + "_prod_" + imageTag)
@@ -75,6 +77,8 @@ func checkImageTag(value string) bool {
 	return re.MatchString(value)
 }
 func verifyParameters(field string, value string) bool {
+	validNamespace := []string{}
+	validName := []string{}
 	switch field {
 	case "命名空间":
 		return isInArray(value, validNamespace)
